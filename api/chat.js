@@ -45,7 +45,7 @@ export default async function handler(req, res) {
         body: JSON.stringify({
           systemInstruction: { parts: [{ text: PERSONAS[persona] }] },
           contents: [{ role: "user", parts: [{ text: message.trim() }] }],
-          generationConfig: { maxOutputTokens: 400, temperature: 0.6 },
+          generationConfig: { maxOutputTokens: 1500, temperature: 0.6 },
         }),
       }
     );
