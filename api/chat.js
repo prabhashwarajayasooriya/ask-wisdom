@@ -1,6 +1,12 @@
 // Vercel serverless function: /api/chat
-const PER_IP_LIMIT = 5;
-const GLOBAL_LIMIT = 150;
+// Setup: in Vercel > Project > Settings > Environment Variables add
+//   GEMINI_API_KEY = your key from https://aistudio.google.com
+//   MODEL = a current free Gemini model name (check AI Studio, e.g. a "flash" model)
+// NOTE: the in-memory counters below reset when Vercel restarts the function.
+// For strict limits later, swap them for Upstash Redis (free tier).
+
+const PER_IP_LIMIT = 5;      // questions per IP per day
+const GLOBAL_LIMIT = 150;    // total questions per day for the whole site (protects the free tier)
 const MAX_LEN = 400;
 
 const ipCount = new Map();
