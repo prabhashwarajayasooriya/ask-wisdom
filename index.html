@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask Wisdom – Questions for Buddhist and Christian teachings</title>
+<meta name="description" content="Ask a question and get an answer grounded in the Tripitaka or the Bible, plus articles explaining the key teachings.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Instrument+Sans:wght@400;600&display=swap">
+<style>
+:root{--bg:#eef1ec;--ink:#1d2a27;--mute:#5b6a66;--card:#fff;--line:#d3dbd5;--bud:#b9741a;--jes:#2f4a7a}
+@media (prefers-color-scheme:dark){:root{--bg:#141b19;--ink:#e8eee9;--mute:#9fb0aa;--card:#1d2724;--line:#2f3d39;--bud:#e0a050;--jes:#8fb0e8}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Newsreader",Georgia,serif}
+a{color:inherit}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 5vw;border-bottom:1px solid var(--line)}
+.logo{font:600 20px "Instrument Sans",sans-serif;text-decoration:none}
+nav{display:flex;gap:18px;font:15px "Instrument Sans",sans-serif;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--mute);padding:4px 0}
+nav a.on{color:var(--ink);border-bottom:2px solid var(--ink)}
+select{font:14px "Instrument Sans",sans-serif;padding:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px}
+main{max-width:860px;margin:0 auto;padding:40px 5vw 60px}
+.view{display:none}.view.on{display:block}
+#home{position:relative}
+.art{position:absolute;left:50%;top:0;width:min(940px,125%);transform:translateX(-50%);z-index:-1;opacity:.45;pointer-events:none;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.art .b{stroke:var(--bud)}.art .j{stroke:var(--jes)}
+h1{font-size:clamp(34px,6vw,56px);line-height:1.1;margin:0 0 14px;font-weight:600}
+h2{font-size:28px;margin:30px 0 8px}
+p.lead{font-size:20px;color:var(--mute);max-width:600px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+@media(max-width:600px){.split{grid-template-columns:1fr}}
+.path{display:block;padding:26px;border-radius:10px;text-decoration:none;color:#fff}
+.path.b{background:var(--bud)}.path.j{background:var(--jes)}
+.path strong{display:block;font-size:26px}
+.path span{font:14px "Instrument Sans",sans-serif;opacity:.92}
+@media(prefers-color-scheme:dark){.path{color:#10171a}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin:14px 0}
+.card a{font-size:21px;font-weight:600;text-decoration:none}
+.card p{margin:6px 0 0;color:var(--mute)}
+#log{min-height:220px;max-height:50vh;overflow:auto;padding:6px 0}
+.m{padding:12px 16px;border-radius:10px;margin:10px 0;max-width:90%}
+.m.u{background:var(--card);border:1px solid var(--line);margin-left:auto}
+.m.a{border-left:4px solid var(--accent)}
+.row{display:flex;gap:8px;margin-top:10px}
+input{flex:1;font:16px "Instrument Sans",sans-serif;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+button{font:600 15px "Instrument Sans",sans-serif;padding:12px 20px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+button:disabled{opacity:.5}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.note{font:13px "Instrument Sans",sans-serif;color:var(--mute);margin-top:12px}
+.ref{font:italic 15px "Newsreader",serif;color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:24px 5vw;font:14px "Instrument Sans",sans-serif;color:var(--mute);text-align:center}
+footer a{margin:0 8px}
+.goog-te-banner-frame,.skiptranslate iframe{display:none!important}body{top:0!important}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">Ask Wisdom</a>
+  <nav>
+    <a href="#home" data-n="home">Home</a>
+    <a href="#buddha" data-n="buddha">Ask Buddha</a>
+    <a href="#jesus" data-n="jesus">Ask Jesus</a>
+    <a href="#articles" data-n="articles">Articles</a>
+  </nav>
+  <label class="note" style="margin:0">Language
+    <select id="lang" aria-label="Translate this page">
+      <option value="en">English</option><option value="si">සිංහල</option><option value="ta">தமிழ்</option>
+      <option value="hi">हिन्दी</option><option value="es">Español</option><option value="fr">Français</option>
+      <option value="de">Deutsch</option><option value="ja">日本語</option><option value="zh-CN">中文</option>
+    </select>
+  </label>
+</header>
+<div id="google_translate_element" style="display:none"></div>
+
+<main>
+<section class="view" id="home">
+  <svg class="art" viewBox="0 0 800 420" aria-hidden="true">
+    <defs><g id="face">
+      <path d="M205 340C210 300 215 280 212 255C185 225 180 150 205 112C225 82 262 70 292 85C322 100 335 135 333 160L345 195C346 200 340 202 336 203C338 212 338 218 334 222C336 230 330 236 322 238C322 252 318 262 305 268C300 285 305 305 322 330"/>
+      <path d="M298 152q14-6 28-2M302 166q11 7 22 0"/>
+      <path d="M205 340L165 420M322 330L370 420M260 360L240 420"/>
+    </g></defs>
+    <g class="b"><use href="#face"/>
+      <path d="M248 82C250 48 288 48 292 86M236 70C255 60 280 60 296 72"/>
+      <path d="M226 170C214 192 218 232 230 256M232 190C228 205 230 225 236 238"/>
+      <path d="M240 112q8-10 18-8M262 100q10-6 20 0M222 132q4-12 14-14"/>
+    </g>
+    <g class="j" transform="translate(800 0) scale(-1 1)"><use href="#face"/>
+      <path d="M205 112C186 190 172 270 186 345M222 100C196 160 190 240 200 300M250 78C262 98 262 112 250 130"/>
+      <path d="M322 238C332 282 318 322 286 336C298 304 298 284 306 268M334 222q-8-5-18 2"/>
+      <path d="M232 180C226 200 230 222 238 236"/>
+    </g>
+  </svg>
+  <h1>Ask a question. Get an answer rooted in the texts.</h1>
+  <p class="lead">Choose a tradition. Answers draw on the Tripitaka for Buddhist teachings and the Bible for Christian teachings.</p>
+  <div class="split">
+    <a class="path b" href="#buddha"><strong>Ask Buddha</strong><span>Answers from Buddhist teachings</span></a>
+    <a class="path j" href="#jesus"><strong>Ask Jesus</strong><span>Answers from the Bible</span></a>
+  </div>
+  <h2>Start reading</h2>
+  <div id="homeArticles"></div>
+</section>
+
+<section class="view" id="buddha" data-persona="buddha" data-accent="#b9741a">
+  <h1>Ask Buddha</h1>
+  <p class="lead">Ask about suffering, the mind, kindness or daily life. Answers follow the Tripitaka.</p>
+  <div class="chat"></div>
+</section>
+
+<section class="view" id="jesus" data-persona="jesus" data-accent="#2f4a7a">
+  <h1>Ask Jesus</h1>
+  <p class="lead">Ask about faith, forgiveness, love or hardship. Answers follow the Bible.</p>
+  <div class="chat"></div>
+</section>
+
+<section class="view" id="articles">
+  <h1>Articles</h1>
+  <div id="list"></div>
+</section>
+
+<section class="view" id="article"><div id="art"></div><p><a href="#articles">Back to all articles</a></p></section>
+<section class="view" id="about">
+  <h1>About</h1>
+  <p>Ask Wisdom is an AI tool that explains Buddhist and Christian teachings using the Tripitaka and the Bible. It is not a monk, priest or pastor, and it does not replace one. For personal or spiritual guidance, please speak to a teacher in your own community.</p>
+</section>
+<section class="view" id="privacy">
+  <h1>Privacy Policy</h1>
+  <p>Replace this text with your real privacy policy before applying for AdSense. It must mention cookies, Google ads and how chat messages are handled.</p>
+</section>
+<section class="view" id="contact">
+  <h1>Contact</h1>
+  <p>Add your contact email here (required for AdSense).</p>
+</section>
+</main>
+
+<footer>
+  <div>An AI tool for learning. It is not a replacement for a monk, priest or pastor.</div>
+  <div style="margin-top:8px"><a href="#about">About</a><a href="#privacy">Privacy Policy</a><a href="#contact">Contact</a></div>
+</footer>
+
+<script>
+/* ---------- CONFIG ---------- */
+const API_URL = "/api/chat";   // your backend endpoint (see setup notes)
+const DAILY_LIMIT = 5;
+
+/* ---------- ARTICLES (replace / add your own, edited in your words) ---------- */
+const ARTICLES = [
+ {id:"mind-first",tag:"Buddhism",title:"The Mind Comes First: Dhammapada verses 1 and 2",
+  sum:"Why the Buddha said our thoughts shape our experience.",
+  ref:"Dhammapada 1–2",
+  body:["The Dhammapada opens with a claim about the mind. In verse 1, the Buddha says that experience is led by the mind and made by the mind. If we speak or act with a corrupted mind, suffering follows us the way a wheel follows the ox that pulls the cart.","Verse 2 gives the other side. If we speak or act with a clear and peaceful mind, happiness follows like a shadow that never leaves us.","The practical point is simple. Before reacting to a situation, look at the state of your own mind. Anger, envy and fear colour what we see. Calm and kindness change what we do next. This is why Buddhist practice starts with meditation and mindfulness, not with changing the world outside.","Try this today: when you feel irritated, pause for three breaths and name the feeling before you act."]},
+ {id:"beatitudes",tag:"Christianity",title:"The Beatitudes: What Jesus Called Blessed",
+  sum:"A plain-language walk through the opening of the Sermon on the Mount.",ref:"Matthew 5:3–12",
+  body:["The Sermon on the Mount begins with a list of blessings, usually called the Beatitudes. Jesus calls blessed the poor in spirit, those who mourn, the meek, those who hunger for righteousness, the merciful, the pure in heart, the peacemakers and those who are persecuted for doing right.","These are not the people the world usually rewards. The message is that God's kingdom values humility, compassion and integrity over power and status.","Mercy and peacemaking stand out because they are active. Jesus asks his listeners to show mercy and to build peace, not just to feel gentle.","Try this today: choose one person you find hard to forgive and think of one small act of mercy toward them."]},
+ {id:"two-roads",tag:"Both traditions",title:"Kindness in Two Traditions: Metta and the Golden Rule",
+  sum:"How Buddhist loving-kindness and Jesus's teaching on love meet.",ref:"Karaniya Metta Sutta; Matthew 7:12",
+  body:["The Metta Sutta teaches a mind that wishes all beings well, like a mother who protects her only child. Jesus teaches, in Matthew 7:12, that we should treat others as we want to be treated.","The language differs, but both ask us to move kindness from a feeling to a habit. Both include people we find difficult. Both say that the way we treat others shapes who we become.","Reading the two side by side does not erase their differences, and each tradition has its own deeper teachings. It simply shows a shared ethical core that many people find helpful in daily life."]}
+];
+
+/* ---------- ROUTER ---------- */
+const views=[...document.querySelectorAll('.view')];
+function route(){
+  const h=(location.hash||'#home').slice(1);
+  let id=h, aid=null;
+  if(h.startsWith('a/')){id='article';aid=h.slice(2)}
+  if(!document.getElementById(id)) id='home';
+  views.forEach(v=>v.classList.toggle('on',v.id===id));
+  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.n===id||(id==='article'&&a.dataset.n==='articles')));
+  if(aid){const a=ARTICLES.find(x=>x.id===aid);
+    if(a)document.getElementById('art').innerHTML=`<p class="note">${a.tag}</p><h1>${a.title}</h1><p class="ref">${a.ref}</p>`+a.body.map(p=>`<p>${p}</p>`).join('')+`<p class="note">Written for learning. Please read the original text for the full context.</p>`}
+  scrollTo(0,0);
+}
+addEventListener('hashchange',route);
+
+const card=a=>`<div class="card"><span class="note">${a.tag}</span><br><a href="#a/${a.id}">${a.title}</a><p>${a.sum}</p></div>`;
+document.getElementById('list').innerHTML=ARTICLES.map(card).join('');
+document.getElementById('homeArticles').innerHTML=ARTICLES.map(card).join('');
+
+/* ---------- DAILY LIMIT (browser-side; enforce on the server too) ---------- */
+function used(){try{const d=JSON.parse(localStorage.getItem('aw')||'{}');return d.day===new Date().toDateString()?d.n:0}catch(e){return 0}}
+function bump(){try{localStorage.setItem('aw',JSON.stringify({day:new Date().toDateString(),n:used()+1}))}catch(e){}}
+
+/* ---------- CHAT ---------- */
+document.querySelectorAll('section[data-persona]').forEach(sec=>{
+  const persona=sec.dataset.persona, accent=sec.dataset.accent;
+  sec.style.setProperty('--accent',accent);
+  const who=persona==='buddha'?'Buddhist teachings (Tripitaka)':'the Bible';
+  const box=sec.querySelector('.chat');
+  box.innerHTML=`<div id="log-${persona}" id="log" style="min-height:200px;max-height:50vh;overflow:auto"></div>
+   <div class="row"><input id="in-${persona}" placeholder="Type your question" aria-label="Your question" maxlength="400">
+   <button id="bt-${persona}">Ask</button></div>
+   <p class="note" id="left-${persona}"></p>
+   <p class="note">This is an AI assistant based on ${who}. It is not a monk, priest or pastor.</p>`;
+  const log=box.querySelector('#log-'+persona),inp=box.querySelector('#in-'+persona),btn=box.querySelector('#bt-'+persona),left=box.querySelector('#left-'+persona);
+  const upd=()=>left.textContent=Math.max(0,DAILY_LIMIT-used())+' of '+DAILY_LIMIT+' free questions left today';
+  const add=(c,t)=>{const d=document.createElement('div');d.className='m '+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d};
+  upd();
+  async function send(){
+    const q=inp.value.trim(); if(!q)return;
+    if(used()>=DAILY_LIMIT){add('a','You have used all '+DAILY_LIMIT+' free questions for today. Please come back tomorrow.');return}
+    add('u',q);inp.value='';btn.disabled=true;const w=add('a','Reflecting…');
+    try{
+      const r=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({persona,message:q})});
+      if(!r.ok)throw new Error(r.status);
+      const j=await r.json();w.textContent=j.reply;bump();upd();
+    }catch(e){w.textContent='The chat server is not connected yet. Follow the setup notes to connect your AI backend.'}
+    btn.disabled=false;inp.focus();
+  }
+  btn.onclick=send;inp.onkeydown=e=>{if(e.key==='Enter')send()};
+});
+
+/* ---------- TRANSLATE (Google Website Translator, free) ---------- */
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element')}
+const L=document.getElementById('lang');
+const m=document.cookie.match(/googtrans=\/en\/([^;]+)/); if(m)L.value=m[1];
+L.onchange=()=>{const v=L.value;
+  const c=v==='en'?'googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/':'googtrans=/en/'+v+';path=/';
+  document.cookie=c;location.reload()};
+if(L.value!=='en'||m){const s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';document.head.appendChild(s)}
+route();
+</script>
+</body>
+</html>
